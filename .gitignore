@@ -1,0 +1,11 @@
+.DS_Store
+
+# Development files
+node_modules
+*.code-workspace
+
+# Generated theme files
+.tmp
+*.map
+composer.lock
+vendor

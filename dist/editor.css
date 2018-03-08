@@ -1,0 +1,87 @@
+/**
+ * Editor-specific styles.
+ */
+
+/**
+ * Editor recipe styles.
+ */
+
+.wp-block-gutenberg-examples-example-05-recipe-card-esnext .recipe-image {
+	background: #f1f1f1;
+	float: right;
+	width: 50%;
+	min-height: 100px;
+	text-align: center;
+}
+
+.wp-block-gutenberg-examples-example-05-recipe-card-esnext .recipe-image button {
+	margin-top: 30px;
+}
+
+.wp-block-gutenberg-examples-example-05-recipe-card-esnext .recipe-image button.image-button {
+	margin: 0;
+	padding: 0;
+	display: block;
+}
+
+.wp-block-gutenberg-examples-example-05-recipe-card-esnext .recipe-image img {
+	display: block;
+	z-index: 1;
+	position: relative;
+}
+
+.wp-block-gutenberg-examples-example-05-recipe-card-esnext h2 {
+	font-size: 1.5em;
+}
+
+.wp-block-gutenberg-examples-example-05-recipe-card-esnext ul {
+	padding-left: 2.5em !important; /* Needs fix in Gutenberg. */
+}
+
+/**
+ * Editor controls styles.
+ */
+
+.wp-block-gutenberg-examples-example-04-controls-esnext {
+	color: #fff;
+	background: #00a8db;
+	border: 2px solid #0d72b2;
+	padding: 20px;
+	font-family: sans-serif;
+}
+
+/**
+ * Editor editable styles.
+ */
+
+.wp-block-gutenberg-examples-example-03-editable-esnext {
+	color: green;
+	background: #cfc;
+	border: 2px solid #9c9;
+	padding: 20px;
+}
+
+/**
+ * Editor tiles styles.
+ */
+
+.wp-block-gutenberg-examples-example-03-editable {
+	color: green;
+	background: #cfc;
+	border: 2px solid #9c9;
+	padding: 20px;
+}
+
+/**
+ * Editor basic styles.
+ */
+
+pre.wp-block-verse,
+.wp-block-verse pre {
+	color: #555;
+	white-space: nowrap;
+	font-family: inherit;
+	font-size: inherit;
+	padding: 1em;
+	overflow: auto;
+}

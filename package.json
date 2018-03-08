@@ -1,0 +1,82 @@
+{
+  "name": "meh-blocks",
+  "version": "1.0.0",
+  "license": "GPL-2.0+",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "npm-run-all --parallel css js",
+    "dev": "npm-run-all --parallel watch:css css-watch-edit watch:js",
+    "css": "npm-run-all --sequential compile:css lint:css",
+    "js": "webpack --module-bind 'js=babel-loader' ./src/index.js --output ./dist/main.js --mode production",
+    "compile:css": "npm-run-all --parallel compile:css-style compile:css-editor",
+    "compile:css-editor": "postcss src/editor.css -o dist/editor.css",
+    "compile:css-style": "postcss src/style.css -o dist/style.css",
+    "minify:css": "postcss dist/editor.css -u cssnano -o dist/editor.min.css --no-map",
+    "lint:css": "stylelint dist/editor.css --fix",
+    "watch:css": "npm-run-all --parallel watch:css-style watch:css-editor",
+    "watch:css-style": "postcss src/style.css -o dist/style.css --watch",
+    "watch:css-editor": "postcss src/editor.css -o dist/editor.css --watch",
+    "watch:js": "webpack --module-bind 'js=babel-loader' ./src/index.js --output ./dist/main.js --mode development --watch"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.0.0-beta.40",
+    "@babel/core": "7.0.0-beta.40",
+    "@babel/preset-env": "7.0.0-beta.40",
+    "@babel/plugin-transform-react-jsx": "7.0.0-beta.40",
+    "autoprefixer": "^8.1.0",
+    "babel-loader": "8.0.0-beta.2",
+    "browserslist": "^3.1.2",
+    "cssnano": "^3.10.0",
+    "del-cli": "^1.1.0",
+    "npm-run-all": "^4.1.2",
+    "postcss-cli": "^5.0.0",
+    "postcss-discard-empty": "^2.1.0",
+    "postcss-easy-import": "^3.0.0",
+    "postcss-import": "^11.1.0",
+    "postcss-mixins": "^6.2.0",
+    "postcss-preset-env": "3.2.2",
+    "postcss-simple-vars": "^4.1.0",
+    "prettier": "^1.11.1",
+    "stylelint": "^9.1.1",
+    "stylelint-config-wordpress": "^12.0.0",
+    "svgo": "1.0.5",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.10"
+  },
+  "postcss": {
+    "plugins": {
+      "postcss-easy-import": {},
+      "postcss-mixins": {},
+      "postcss-discard-empty": {},
+      "postcss-preset-env": {},
+      "autoprefixer": {}
+    }
+  },
+  "babel": {
+    "presets": ["@babel/env"],
+    "plugins": [
+      [
+        "@babel/plugin-transform-react-jsx",
+        {
+          "pragma": "wp.element.createElement"
+        }
+      ]
+    ]
+  },
+  "stylelint": {
+    "defaultSeverity": "warning",
+    "extends": "stylelint-config-wordpress"
+  },
+  "browserslist": [
+    "> 1%",
+    "ie >= 11",
+    "last 1 Android versions",
+    "last 1 ChromeAndroid versions",
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Safari versions",
+    "last 2 iOS versions",
+    "last 2 Edge versions",
+    "last 2 Opera versions"
+  ]
+}

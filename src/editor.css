@@ -1,0 +1,5 @@
+/**
+ * Editor-specific styles.
+ */
+
+@import "./blocks/**/*editor.css";
